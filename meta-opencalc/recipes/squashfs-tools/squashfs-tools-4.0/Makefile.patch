@@ -1,0 +1,23 @@
+Index: squashfs-tools/Makefile
+===================================================================
+--- squashfs-tools.orig/Makefile	2010-03-08 11:17:18.009403053 +0100
++++ squashfs-tools/Makefile	2010-03-08 11:18:04.240910008 +0100
+@@ -51,7 +51,7 @@
+ all: mksquashfs unsquashfs
+ 
+ mksquashfs: $(MKSQUASHFS_OBJS)
+-	$(CC) $(MKSQUASHFS_OBJS) -lz -lpthread -lm $(LIBS) -o $@
++	$(CC) $(LDFLAGS) $(MKSQUASHFS_OBJS) -lz -lpthread -lm $(LIBS) -o $@
+ 
+ mksquashfs.o: mksquashfs.c squashfs_fs.h mksquashfs.h global.h sort.h \
+ 	squashfs_swap.h
+@@ -67,7 +67,7 @@
+ compressor.o: compressor.c compressor.h
+ 
+ unsquashfs: $(UNSQUASHFS_OBJS)
+-	$(CC) $(UNSQUASHFS_OBJS) -lz -lpthread -lm $(LIBS) -o $@
++	$(CC) $(LDFLAGS) $(UNSQUASHFS_OBJS) -lz -lpthread -lm $(LIBS) -o $@
+ 
+ unsquashfs.o: unsquashfs.h unsquashfs.c squashfs_fs.h squashfs_swap.h \
+ 	squashfs_compat.h global.h
+

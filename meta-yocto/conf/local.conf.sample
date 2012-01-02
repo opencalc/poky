@@ -62,7 +62,7 @@ EXTRA_IMAGE_FEATURES = "debug-tweaks"
 # include 'package_ipk' for ipks
 # include 'package_rpm' for rpms
 #PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
-PACKAGE_CLASSES ?= "package_rpm package_ipk"
+PACKAGE_CLASSES ?= "package_ipk"
 
 # mklibs library size optimization is more useful to smaller images,
 # and less useful for bigger images. Also mklibs library optimization
